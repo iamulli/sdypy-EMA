@@ -1569,7 +1569,7 @@ def _gram_schmidt(P, z_2sided, bs, Nf, tqdm_range):
             category=UserWarning,
             stacklevel=2
         )
-        for k in tqdm_range(range(1, bs), desc="Building Regression Matrix"):
+        for k in tqdm_range(range(1, bs)):
             P[k] = z_2sided * P[k - 1]
             for j in range(k):
                 proj = np.sum(np.conj(P[j]) * P[k])
